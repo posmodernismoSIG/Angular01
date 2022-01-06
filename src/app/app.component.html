@@ -1,0 +1,50 @@
+<h1>Eventos</h1>
+<button [disabled] = "btnDisabled">Enviar</button>
+<button (click)="toggleButton()">Toggle button</button>
+<p>Edad {{person.edad}}</p>
+<button (click)="ageMas()"> ++ </button>
+<!--ESTRUCTURAS DE CONTRON ANGULAR-->
+<hr/>
+Largo <input type="integer" (keyup)="largC($event)">
+Nombre <input type="text" (keyup)="cuadrado($event)"> 
+<div>
+
+<p *ngIf="rec01.nombre == 'Juan' && rec01.alto >10; else fnElse"> El cuadrado es chimba</p>
+
+<ng-template #fnElse>
+    <p>no es ni Juan y el alto de rectangulo no es mayor a 10 </p>
+    
+</ng-template>
+<hr/>
+</div>
+<div>
+    <input type="text" [(ngModel)]="Nname"/>
+    <button (click)="addName()">AGREGAR</button>
+    <ul>
+        <li *ngIf = "this.names.length == 0"> La lista esra vacia</li>
+        <li *ngFor="let name of names; index as in">
+        {{name}}{{in}}
+        <button (click)="delName(in)">x</button>
+        </li>
+    </ul>
+</div>
+
+<input type="text" required #nameInput="ngModel" [(ngModel)]="person.edad" />
+<h6>valid = {{nameInput.valid}}</h6>
+<div class="box" (scroll)="scrollOn($event)">
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem beatae, ducimus nam recusandae magni est dolorem consectetur vero aut pariatur aliquid non sit ut suscipit animi voluptas quam vel ad. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem beatae, ducimus nam recusandae magni est dolorem consectetur vero aut pariatur aliquid non sit ut suscipit animi voluptas quam vel ad. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem beatae, ducimus nam recusandae magni est dolorem consectetur vero aut pariatur aliquid non sit ut suscipit animi voluptas quam vel ad. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem beatae, ducimus nam recusandae magni est dolorem consectetur vero aut pariatur aliquid non sit ut suscipit animi voluptas quam vel ad. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem beatae, ducimus nam recusandae magni est dolorem consectetur vero aut pariatur aliquid non sit ut suscipit animi voluptas quam vel ad. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem beatae, ducimus nam recusandae magni est dolorem consectetur vero aut pariatur aliquid non sit ut suscipit animi voluptas quam vel ad.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem beatae, ducimus nam recusandae magni est dolorem consectetur vero aut pariatur aliquid non sit ut suscipit animi voluptas quam vel ad. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem beatae, ducimus nam recusandae magni est dolorem consectetur vero aut pariatur aliquid non sit ut suscipit animi voluptas quam vel ad. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem beatae, ducimus nam recusandae magni est dolorem consectetur vero aut pariatur aliquid non sit ut suscipit animi voluptas quam vel ad. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem beatae, ducimus nam recusandae magni est dolorem consectetur vero aut pariatur aliquid non sit ut suscipit animi voluptas quam vel ad. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem beatae, ducimus nam recusandae magni est dolorem consectetur vero aut pariatur aliquid non sit ut suscipit animi voluptas quam vel ad. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem beatae, ducimus nam recusandae magni est dolorem consectetur vero aut pariatur aliquid non sit ut suscipit animi voluptas quam vel ad. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem beatae, ducimus nam recusandae magni est dolorem consectetur vero aut pariatur aliquid non sit ut suscipit animi voluptas quam vel ad. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem beatae, ducimus nam recusandae magni est dolorem consectetur vero aut pariatur aliquid non sit ut suscipit animi voluptas quam vel ad.</p>
+</div>
+<p>Nombre {{person.nombre}}</p>
+<input type="text" (keyup)="nameChange($event)">
+<hr/>
+<h1>Propiedades</h1>
+<button [disabled] = "btnDisabled">Enviar</button>
+<input type="text" [value]=person.nombre> 
+<progress max="100" [value]=person.edad></progress>
+<img width="100" [src]=person.avatar />
+<hr/>
+<h1> HOLA MUNDO</h1>
+<h2>{{'Hola Mundo'.repeat(5)}}</h2>
+<p>3+3 = {{3+3}}</p>
+<h3> hola soy {{name}} y tengo {{age}} años</h3>
+<img src={{img01}} alt="img">
