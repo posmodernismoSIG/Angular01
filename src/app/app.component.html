@@ -1,4 +1,9 @@
-<h1>Eventos</h1>
+<body  class="Main">
+    
+
+   
+
+<h1>LOS MALOS DIAS</h1>
 <button [disabled] = "btnDisabled">Enviar</button>
 <button (click)="toggleButton()">Toggle button</button>
 <p>Edad {{person.edad}}</p>
@@ -47,4 +52,14 @@ Nombre <input type="text" (keyup)="cuadrado($event)">
 <h2>{{'Hola Mundo'.repeat(5)}}</h2>
 <p>3+3 = {{3+3}}</p>
 <h3> hola soy {{name}} y tengo {{age}} años</h3>
-<img src={{img01}} alt="img">
+
+<hr/>
+<div class = "product-object">
+<div *ngFor="let i of albums">
+    <h1>{{i.name}}</h1>
+    <img class= "album" width="200 " [src]="i.image" alt="">
+    <p>{{i.age}}</p>
+    <p>{{i.genere}}</p>
+</div>
+</div>
+</body>

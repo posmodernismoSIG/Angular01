@@ -1,6 +1,50 @@
+
+body{
+    background-image:url("https://previews.123rf.com/images/schan/schan1601/schan160100390/50379246-humo-verde-sobre-fondo-blanco-inversi%C3%B3n.jpg");
+    background-size: cover;
+    border-left: 0px;
+    border-right: 0px;
+    margin: 0px;
+}
 .box {
-    width: auto;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     background-color: beige;
     overflow: auto;
 }
+.back{
+    max-width: 100%;
+    height: auto;
+}
+.album {
+    position:auto;
+    left: -100%;
+    right: -100%;
+    top: -100%;
+    bottom: -100%;
+    margin: auto;
+    min-height: 70%;
+    min-width: 70%;
+    border-radius: 1000px;
+}
+.product-object {
+    display: flex;
+    flex-direction: column;
+
+    div{
+        h2, p {
+            margin: 0;
+        }
+    }
+    
+}
+
+@media screen and (min-width: 40em){
+    .product-object {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-gap: 0px;
+    }
+}
+
+
