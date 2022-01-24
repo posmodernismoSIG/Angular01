@@ -13,7 +13,15 @@ export class AppComponent {
   img01 = 'https://scontent.fbog3-1.fna.fbcdn.net/v/t1.6435-9/118534100_1427317170792009_4245589456307821532_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=e3f864&_nc_ohc=_VnRkxeK_6UAX8fVEo9&_nc_ht=scontent.fbog3-1.fna&oh=00_AT82nF0MxOBqKRSzV47ClUzAv-fci9WGOMM2s1JWH9etPg&oe=62125992';
   btnDisabled = true; 
  
-
+  pruebas = {
+    at01 :'text',
+    at02 : 0
+ }
+ register = {
+   nombre : '',
+   mail : '',
+   pwd : '',
+ }
   person = {
     nombre: 'Anfres',
     edad: 20,
@@ -75,7 +83,9 @@ export class AppComponent {
   }
   delName(i: number){
     this.names.splice(i, 1)
-
+  }
+  onRegister(){
+    console.log(this.register)
   }
   Albums = [
     {

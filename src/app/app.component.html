@@ -1,8 +1,29 @@
 <body  class="Main">
     
+<h1 class="logTitulo" > F O R M U L A R I O </h1>
+<form class ="formulario" (ngSubmit)="onRegister()" #form012="ngForm">
+    <div class="inputGroup">
+        <label for="name">Nombre</label>
+        <input type="name" required id="name" name= "name" [(ngModel)]="register.nombre"/>
+        <p>            Mensajes de error         </p>
+    </div>
 
-   
+    <div class="inputGroup">
+        <label for="mail">Mail</label>
+        <input type="mail" required id="Mail" name= "mail" [(ngModel)]="register.mail"/>
+        <p>            Mensajes de error         </p>
+    </div>
 
+    <div class="inputGroup">
+        <label for="pwd">Clave</label>
+        <input type="pwd" required id="pwd" name= "pwd" [(ngModel)]="register.pwd"/>
+        <p>            Mensajes de error         </p>
+    </div>
+    <button [disabled]="form012.invalid" type="submit"> LOG IN </button>     <!-- EL TYPE DENTRO DE LOS FORM ES OBLIGATORIO POR QUE O SI NO AUSME QUE ES UN SUBMIT-->
+
+</form>
+<hr/>   
+<hr/>
 <h1>LOS MALOS DIAS</h1>
 <button [disabled] = "btnDisabled">Enviar</button>
 <button (click)="toggleButton()">Toggle button</button>
@@ -61,5 +82,19 @@ Nombre <input type="text" (keyup)="cuadrado($event)">
     <p>{{i.age}}</p>
     <p>{{i.genere}}</p>
 </div>
+</div>
+<!-- CLASES DINAMICAS -->
+<h1>
+    CLASES & ESTILOS
+</h1>
+<div>
+<input type="text" required #nameInput2 ="ngModel" [(ngModel)]="pruebas.at01" />
+<p class="mensajeError" [class.active]="nameInput2.invalid">
+    El campo es requerido                           <!-- class.active es una sub case de mensajeError, con &.active que pone el formato ocurrente en caso de que se cumpla la condicion-->
+</p>          
+<input type="text" required #nameInput3 ="ngModel" [(ngModel)]="pruebas.at02" />
+<p [style.font-style]="nameInput3.invalid ? 'oblique' : 'normal'" >   <!-- [STYLE.ATRIBUTO DE ESTILO A CAMBIAR] = INPUT.CONDICION //CONDICIONAL ABREVIADO ? RETURN SI CUMPLE : RETURN SI NO CUMPLE-->
+    No es valido
+</p> 
 </div>
 </body>

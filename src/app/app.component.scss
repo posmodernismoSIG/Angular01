@@ -5,6 +5,18 @@ body{
     border-left: 0px;
     border-right: 0px;
     margin: 0px;
+    
+}
+.formulario{
+    position: initial;
+    left: initial;
+    right: initial;
+    color: rgb(19, 83, 64); 
+}
+.logTitulo{
+    background-color: rgb(31, 197, 128);
+
+
 }
 .box {
     width: 200px;
@@ -37,6 +49,20 @@ body{
         }
     }
     
+}
+.mensajeError{
+    opacity: 0%;
+    
+    &.active{
+        
+    background-color: rgb(240, 128, 128);
+    color: black;
+    opacity: 50%;
+    transition: all linear .5s;
+
+    }
+
+
 }
 
 @media screen and (min-width: 40em){
